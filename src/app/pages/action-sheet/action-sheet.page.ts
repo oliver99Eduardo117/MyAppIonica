@@ -8,20 +8,20 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class ActionSheetPage implements OnInit {
 
-  constructor( private actionsheetCtrl: ActionSheetController) {
-
-  }
+  constructor( private actionsheetCtrl: ActionSheetController) {}
 
   ngOnInit() {
   }
 
-  async presentActionSheet() {
+    async presentActionSheet() {
     const actionSheet = await this.actionsheetCtrl.create({
       header: 'Albums',
+      backdropDismiss: false,
       buttons: [{
         text: 'Delete',
         role: 'destructive',
         icon: 'trash',
+        cssClass: 'rojo',
         handler: () => {
           console.log('Delete clicked');
         }
